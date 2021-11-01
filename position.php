@@ -77,7 +77,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                     <div class="modal-body text-dark">
-                                        <h5>ต้องการลบข้อมูล ?</h5>
+                                        <h5>ต้องการลบข้อมูลนะ ?</h5>
                                     </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
