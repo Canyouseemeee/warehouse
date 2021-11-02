@@ -1,11 +1,24 @@
-<!-- <?php
-    // session_start();
-
-    // if(!isset($_SESSION['Mlogin']))
-    // {
-    //   header('Location:login.php?error=Please login');
-    // }
-    ?> -->
+<?php
+    function generateRandomString($length = 2) {
+        // $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        $length2 = 5;
+        $characters2 = '0123456789';
+        $charactersLength2 = strlen($characters2);
+        $randomString2 = '';
+        for ($i = 0; $i < $length2; $i++) {
+            $randomString2 .= $characters2[rand(0, $charactersLength2 - 1)];
+        }
+        $result = $randomString."".$randomString2;
+        return $result;
+    }
+    echo generateRandomString();
+    ?>
     <!DOCTYPE html>
     <html lang="en">
     <head>

@@ -66,7 +66,7 @@
                               $row2 = mysqli_fetch_array($query2);
                               while($row = mysqli_fetch_array($query)){?>
                                 echo '
-                                  <option value="<?php echo $row['position_name'];?>" <?php if ($row ['position_name'] == $row2 ['emy_position']){ echo 'selected'; }?>><?php echo $row['position_name'];?></option>
+                                  <option value="<?php echo $row['position_id'];?>" <?php if ($row ['position_name'] == $row2 ['emy_position']){ echo 'selected'; }?>><?php echo $row['position_name'];?></option>
                                 ';
                               <?php }?>                         
                         </select>

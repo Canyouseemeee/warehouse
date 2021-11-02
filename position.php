@@ -50,7 +50,8 @@
                 <tbody>
                 <?PHP
                     include('connect_db.php');
-                    $sql = "SELECT * FROM tb_employee order by emy_id ASC";
+                    $sql = "SELECT *
+                    FROM tb_employee,tb_position WHERE emy_position = position_id order by emy_id ASC";
                     $query = mysqli_query($connection,$sql);
                     $i = 1;
                     while ($row = mysqli_fetch_array($query)){
@@ -62,7 +63,7 @@
                     <td><?PHP echo $row['emy_tel'];?></td>
                     <td><?PHP echo $row['emy_salary'];?></td>
                     <td><?PHP echo $row['emy_address'];?></td>
-                    <td><?PHP echo $row['emy_position'];?></td>
+                    <td><?PHP echo $row['position_name'];?></td>
                    
                     <td><a href="form_edit_employee.php?id=<?PHP echo $row['emy_id'];?>" class="btn btn-warning">แก้ไข</a></td>
                     <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $i;  ?>">
@@ -137,7 +138,7 @@
                               $query = mysqli_query($connection,$sql);
                               while($row = mysqli_fetch_array($query)){
                                 echo '
-                                  <option value='.$row['position_name'].'>'.$row['position_name'].'</option>
+                                  <option value='.$row['position_id'].'>'.$row['position_name'].'</option>
                                 ';
                               }                         
                           ?>
